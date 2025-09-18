@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Perhitungan bangun</title>
   <style>
+    /*  Style untuk Membantu tampilan agar mudah di pahami    */
     body{
       margin-left: 100px;
       margin-right: 100px;
@@ -43,7 +44,7 @@
 </head>
 <body>
   <h2 align="center">Kalkulator bangun datar</h2>
-
+<!--  Form untuk melakukan input dengan 3 bangun datar persegi panjang, Bujur Sangkar, dan Segitiga  -->
   <form id="input_hitung">
     <h3 >Persegi Panjang</h3>
     <label for="">Panjang:</label> 
@@ -62,9 +63,11 @@
     <br><input type="number" placeholder="masukkan tinggi" id="tinggi"><br><br>
     <button type="button" onclick="hitung()">Hitung</button>
   </form>
+<!--   Untuk membuat ruang hasil perhitungan -->
   <div id="hasil"></div>
 
   <script>
+    // Membuat rumus untuk tiap bangun datar
     function luasPersegiPanjang(panjang, lebar) {
       return panjang * lebar;
     }
@@ -76,7 +79,7 @@
     function luasSegitiga(alas, tinggi) {
       return 0.5 * alas * tinggi;
     }
-
+    // untuk mengubah data input menjadi float dan juga mengisi 0 apabila user tidak melakukan input
     function hitung() {
       let panjang = parseFloat(document.getElementById("panjang").value) || 0;
       let lebar   = parseFloat(document.getElementById("lebar").value) || 0;
@@ -84,6 +87,7 @@
       let alas    = parseFloat(document.getElementById("alas").value) || 0;
       let tinggi  = parseFloat(document.getElementById("tinggi").value) || 0;
 
+      // membuat logika untuk bagian hasil
       document.getElementById("hasil").innerHTML = `
         <b>Hasil Perhitungan Bangun Satar:</b><br>
         Luas Persegi Panjang ${luasPersegiPanjang(panjang, lebar)} <br>
