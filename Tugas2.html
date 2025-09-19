@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Pegawai</title>
+    <style>
+      body {
+        background-color: #1e1e1e;
+        font-family: Arial, sans-serif;
+      }
+
+      .heading {
+        text-align: center;
+        color: #e0e0e0;
+      }
+
+      .contain {
+        color: #e0e0e0;
+        width: 80%;
+        margin: auto;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      th, td {
+        border: 1px solid #e0e0e0;
+        padding: 8px;
+        text-align: center;
+      }
+
+      thead {
+        background-color: #2c2c2c;
+      }
+
+      tfoot {
+        background-color: #333333;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="heading">
+      <h1>
+        Data Pegawai <br />
+        PT. Dirgantara Indonesia
+      </h1>
+      <hr />
+    </div>
+
+    <div class="contain">
+      <table>
+        <thead>
+          <!-- membuat heading untuk table -->
+          <tr>
+            <th>Nama Pegawai</th>
+            <th>Umur</th>
+            <th>Jabatan</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="data">
+          <!-- data diisikan melalui script di bawah -->
+        </tbody>
+        <tfoot>
+          <!-- menyatukan 3 kolom dan menyisakkan tempat untuk memasukkan total gaji -->
+          <tr>
+            <td colspan="3">Total Gaji</td>
+            <td id="total"></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <script>
+      // Membuat variabel untuk isi
+      let pegawai = "Dodi Prayodi";
+      let umur = 25;
+      let jabatan = "Manajer";
+      let status = "Menikah";
+
+      // Gaji pokok dengan IF
+      let gajiPokok;
+      if (jabatan === "Manajer") {
+        gajiPokok = 15000000;
+      } else if (jabatan === "Asisten Manajer") {
+        gajiPokok = 10000000;
+      } else {
+        gajiPokok = 5000000;
+      }
+
+      // Tunjangan Jabatan
+      let tunjanganJabatan = 0.15 * gajiPokok;
+
+      // Pengeluaran BPJS
+      let bpjs = 0.1 * gajiPokok;
+
+      // Tunjangan Keluarga
+      let tunjanganKeluarga = (status == "Menikah") ? 0.2 * gajiPokok : 0;
+
+      // Total gaji yang didapat
+      let totalGaji = gajiPokok + tunjanganJabatan - bpjs + tunjanganKeluarga;
+
+      // Membuat variabel keluar ke html
+      document.getElementById("data").innerHTML = `
+      <tr>
+        <td>${pegawai}</td>
+        <td>${umur}</td>
+        <td>${jabatan}</td>
+        <td>${status}</td>
+      </tr>
+    `;
+
+      document.getElementById("total").innerText = "Rp " + totalGaji;
+    </script>
+  </body>
+</html>
