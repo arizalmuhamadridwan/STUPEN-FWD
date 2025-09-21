@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="heading">
+    <h1>
+      Data Produk <br />Toko Dirgantara Indonesia
+    </h1>
+    <hr />
+  </div>
+  <div class="contain">
+  <form id="input">
+    <h3>Tampilkan Produk</h3>
+    <button type="button" onclick="tampilkan()">Tampilkan</button>
+
+    <h3>Data Produk</h3>
+    <label for="">Nama Produk:</label> 
+    <br><input type="text" placeholder="masukkan nama produk" id="namaProduk"><br>
+    <label for="">Harga:</label> 
+    <br><input type="number" placeholder="masukkan harga produk" id="harga"><br>
+    <label for="">Stok:</label> 
+    <br><input type="number" placeholder="masukkan stok produk" id="stok"><br>
+    <button type="button" onclick="tambah()">Tambah Produk</button>
+
+  </form>
+  <div id="informasi"></div>
+
+  </div>
+
+  <script src="real.js"></script>
+</body>
+</html>
