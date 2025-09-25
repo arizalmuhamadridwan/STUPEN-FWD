@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tugas 5 omaga</title>
+  <style>
+    body {
+        background-color: #1e1e1e;
+        font-family: Arial, sans-serif;
+        color: #e0e0e0;
+    }
+
+    #heading{
+        text-align: center;
+    }
+
+    #contain {
+        display: flex;
+        justify-content: space-around;  
+        align-items: center;      
+        width: 100%; 
+    }
+
+    #tampil, #tambah, #hapus {
+        font-weight: bolder;
+        padding: 10px;
+        border-radius: 10px;
+        border-color: #1e1e1e;
+    }
+
+    #tampil:hover, #tambah:hover, #hapus:hover{
+        color: #e0e0e0;
+        background-color: #1e1e1e;
+        border-color: #e0e0e0;
+    }
+
+    #output{
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    table {
+        margin: 0 auto;
+        border-collapse: collapse;
+        width: 90%;
+    }
+
+    th, td {
+        border: 1px solid #e0e0e0;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="heading">Daftar Produk <br> Toko Atul Dirgantara</h1>
+  <hr>
+  <div id="contain">
+    <div>
+        <button id="tampil">Tampilkan data</button>
+    </div>
+    <div>
+        <button id="tambah">Tambah data</button>
+    </div>
+    <div>
+        <button id="hapus">Hapus data</button>
+    </div>
+  </div>
+
+  <div id="output"></div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
